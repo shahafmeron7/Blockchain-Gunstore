@@ -1,15 +1,14 @@
-import { defineConfig ,loadEnv} from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig, loadEnv } from "vite";
+import react from "@vitejs/plugin-react";
 import envCompatible from "vite-plugin-env-compatible";
 import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode})=>{
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
-  return{
-
-    plugins: [react()],
+  return {
+    plugins: [react(), envCompatible()],
     build: {
       outDir: "build",
       sourcemap: false,
@@ -23,10 +22,9 @@ export default defineConfig(({mode})=>{
           assetFileNames: `assets/[hash].[ext]`,
         },
       },
-      
     },
     server: {
       open: true,
     },
-  }
-})
+  };
+});
