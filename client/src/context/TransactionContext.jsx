@@ -53,6 +53,7 @@ export const TransactionProvider = ({ children }) => {
           weaponUrl: ts.weaponUrl,
 
         }))
+        console.log("newTsxData",newTsxData)
         setTransactions(newTsxData)
       }
       else {
@@ -69,6 +70,7 @@ export const TransactionProvider = ({ children }) => {
       const accounts = await ethereum.request({ method: "eth_accounts" });
       if (accounts.length) {
         //set the account to be our main account(0)
+        console.log(accounts[0]);
         setCurrentAccount(accounts[0]);
         //setting the account transactions so we can show his data as the current state.
         getAccountTransactions();
@@ -230,6 +232,7 @@ export const TransactionProvider = ({ children }) => {
     try {
       //api call to all account weapons from his metamask account address
       const res = await axios.post(`${addressRoute}/byMetamask`, { account_metamask_address: currentAccount })
+      console.log(res.data)
       //setting the account weapons array
       setAccountWeapons(res.data)
     } catch (error) {

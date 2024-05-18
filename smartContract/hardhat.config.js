@@ -1,5 +1,6 @@
 //plugin to build smart contract tests using Waffle in Hardhat
 require("@nomiclabs/hardhat-waffle");
+require('dotenv').config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -20,10 +21,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   solidity: "0.8.0",
   networks:{
-    ropsten:{
-      url: 'https://eth-ropsten.alchemyapi.io/v2/svzS6xIIPxkq0T1holdy1gcFsrNiUYXL',
-      //this key is the metamask account private key for that address
-      accounts: ['c7ee49f17bf50a4e2c0348b3ff7e2cac80af780cd58ea746a4e4c25fc9bc5b09']
+    sepolia: {
+      url: process.env.SEPOLIA_URL, 
+      accounts: [process.env.SEPOLIA_PRIVATE_KEY]
     }
   }
 };

@@ -49,8 +49,8 @@ function Weapons() {
       {currentAccount ? (
         <div className="flex flex-wrap justify-center items-center mt-10">
           <AnimatePresence>
-            {filtered.length > 0 ? (
-              filtered.map((weapon) => (
+            {accountWeapons.length > 0 ? (
+              accountWeapons.map((weapon) => (
                 <WeaponCard
                   timestamp={weapon.timestamp}
                   key={weapon._id}
