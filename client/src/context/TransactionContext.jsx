@@ -70,7 +70,6 @@ export const TransactionProvider = ({ children }) => {
       const accounts = await ethereum.request({ method: "eth_accounts" });
       if (accounts.length) {
         //set the account to be our main account(0)
-        console.log(accounts[0]);
         setCurrentAccount(accounts[0]);
         //setting the account transactions so we can show his data as the current state.
         getAccountTransactions();

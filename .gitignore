@@ -9,6 +9,7 @@ logs/
 npm-debug.log*
 
 # Environment files in specific directories
+/client/.env
 /server/.env
 /smartContract/.env
 # Directory to ignore
