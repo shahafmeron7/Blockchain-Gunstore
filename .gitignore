@@ -1,0 +1,27 @@
+# /Blockchain-Gunstore-main/.gitignore
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment files in specific directories
+/client/.env
+/server/.env
+
+# Directory to ignore
+/server/dummy/
+
+# Build output
+dist/
+build/
+
+# Vite specific
+.vite/
+
+# Temporary files
+*.tmp
+*.swp
