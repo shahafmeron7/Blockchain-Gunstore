@@ -40,7 +40,11 @@ cd Blockchain-Gunstore</code></pre></li>
 
 DB_URI=mongodb://localhost:27017/gunstore
 SEPOLIA_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
-SEPOLIA_PRIVATE_KEY=0xYOUR_SEPOLIA_PRIVATE_KEY</code></pre></li>
+SEPOLIA_PRIVATE_KEY=0xYOUR_SEPOLIA_PRIVATE_KEY
+Create a .env file in the client directory and add the following variables:
+REACT_APP_CONTRACT_ADDRESS_ABI=Your_Contract_Address
+REACT_APP_GUNSTORE_ADDRESS=Your_Gunstore_Address
+</code></pre></li>
         <li><strong>Run the Backend Server</strong><pre><code>cd server
 npm start</code></pre></li>
         <li><strong>Start the React Application</strong><pre><code>cd client
